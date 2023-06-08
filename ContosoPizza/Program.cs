@@ -8,8 +8,7 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddRazorPages();
 builder.Services.AddDbContext<PizzaContext>(options =>
-    options.UseSqlServer("Data Source=DESKTOP-NRR3UEM\\SQLEXPRESS;Database=ContosoPizza;Integrated Security=True;TrustServerCertificate=True;Trusted_Connection=True;"));
-builder.Services.AddScoped<PizzaService>();
+    options.UseSqlite("Data Source=ContosoPizza.db"));
 
 var app = builder.Build();
 
